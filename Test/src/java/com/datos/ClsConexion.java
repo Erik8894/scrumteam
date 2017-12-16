@@ -58,7 +58,7 @@ public class ClsConexion {
        try {
             //Driver JDBC
             Class.forName("com.mysql.jdbc.Driver");
-            //Nombre del servidor. localhost:3306 es la ruta y el puerto de la conexión MySQL
+            //Nombre del servidor. localhost:3306 es la ruta y el puerto de la conexión 
             //panamahitek_text es el nombre que le dimos a la base de datos
             String servidor = "jdbc:postgresql://localhost:5432/isproyecto";
             //El root es el nombre de usuario por default. No hay contraseña
