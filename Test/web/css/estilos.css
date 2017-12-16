@@ -1,0 +1,10 @@
+/*--header-- */
+.navbar{
+    margin-bottom: 0;
+}
+
+.jumbotron{
+    background: #269abc;
+    color: #fff;
+    padding: 20px 0;
+}
