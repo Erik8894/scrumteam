@@ -1,4 +1,12 @@
 /*--header-- */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .navbar{
     margin-bottom: 0;
 }
@@ -8,3 +16,42 @@
     color: #fff;
     padding: 20px 0;
 }
+
+
+.formulario h2{
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.formulario > div{
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.radio-toolbar input[type="radio"] {
+  display: none;
+}
+
+.radio-toolbar label {
+  display: block;
+  background-color: #ddd;
+  padding: 4px 11px;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  line-height: 150%;
+  
+  
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+   
+  content: "";
+  
+  background: none;
+  border: 3px solid #0275d8;
+   background: rgba(69, 219, 0, 0.23);
+}
+
