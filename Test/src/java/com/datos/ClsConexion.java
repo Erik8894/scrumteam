@@ -51,7 +51,7 @@ public class ClsConexion {
 		this.driver ="org.postgresql.Driver";
 		this.user="postgres";
 		this.pwd="1234";
-		this.cadena="jdbc:postgresql://localhost:5433/proyectoInform";// referencia ala bd
+		this.cadena="jdbc:postgresql://localhost:5432/proyectoIS";// referencia ala bd
 		this.con=this.crearConexion();
 		
 	}

@@ -42,10 +42,23 @@
  Version 2 license, then the option applies only if the new code is
  made subject to such option by the copyright holder.
 -->
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="3.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>InicioSesion</servlet-name>
+        <servlet-class>Servlet.InicioSesion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>registrarUsuario</servlet-name>
+        <servlet-class>Servlet.registrarUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InicioSesion</servlet-name>
+        <url-pattern>/iniciar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registrarUsuario</servlet-name>
+        <url-pattern>/registrarU</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -53,5 +66,5 @@
     </session-config>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
-        </welcome-file-list>
-    </web-app>
+    </welcome-file-list>
+</web-app>

@@ -2,6 +2,7 @@ package metodos;
 
 import java.sql.ResultSet;
 import com.datos.ClsConexion;
+import java.sql.PreparedStatement;
 
 public class clsmetodos 
 {
@@ -80,5 +81,45 @@ public class clsmetodos
 		con.Ejecutar(sql);
 		
 	}
-
+        
+        public boolean autentificacion(String usuario, String contraseña)
+        {
+                String user;
+                String pass;
+		ResultSet rs=null;
+		ClsConexion obj=new ClsConexion();
+                try {
+                String con="Select * from usuario where id_usuario='"+usuario+"' and pass='"+contraseña+"'";
+                rs=obj.Consulta(con);
+                while(rs.next())
+                {
+                user=rs.getString(1);
+                pass=rs.getString(4);
+                
+                if(usuario.equals(user)&& contraseña.equals(pass))
+                {
+                    return true;
+                }
+                    
+                }
+                           
+                
+            } catch (Exception e) {
+                    System.err.println("error"+e);
+            }
+            return false;
+        }
+      
+        public boolean ingresarUsuario_1(String id_usuario, String nombre_usuario, String tipo,String pass)
+	{
+                String sql= "insert into usuario values ('"+id_usuario+"','"+nombre_usuario+"','"+tipo+"','"+pass+"')";
+                System.out.println(sql);
+		ClsConexion con = new ClsConexion();
+		//con.e1
+                if(con.Ejecutar(sql)!=null)
+                {
+                    return true;
+                }
+                return false;      
+        }
 }
