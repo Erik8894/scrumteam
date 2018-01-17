@@ -25,7 +25,7 @@
             </div>
             <div class="input-group">
             <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon1"></span>
-            <input type="password" class="form-control" name="contra"aria-describedby="basic-addon1" onchange="validar(this.value)" placeholder="pass"/><br>
+            <input type="password" class="form-control" name="contra"aria-describedby="basic-addon1" onchange="validar(this.value)" placeholder="Ingrese Contraseña"/><br>
             </div>
             <input type="submit" value="Iniciar Sesión"/><br>
         </form>
