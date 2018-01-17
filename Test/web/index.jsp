@@ -13,7 +13,7 @@
         <script src="js/bootstrap.js"></script>
         <script src="js/validaciones.js"></script>
     </head>
-    <body background ="fondo.png">
+    <body background ="img/fondo.jpg">
         <div class="container">
             <div class="main main-center col-md-5 cmiddle-col" >
         
