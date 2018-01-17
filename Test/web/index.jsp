@@ -14,8 +14,8 @@
         <script src="js/validaciones.js"></script>
     </head>
     <body background ="fondo.png">
-        <div class="container col-md-7 cmiddle-col">
-            <div class="main main-center">
+        <div class="container">
+            <div class="main main-center col-md-5 cmiddle-col" >
         
         <form action="iniciar" method="post">
             <h1>Sistema de Autentificación TEST PAP</h1>
