@@ -5,8 +5,27 @@
  */
 
 
-   
-      function validar(cedula) {
+function es(num,msg) {
+    
+
+
+                switch (num) {
+    case 1:
+       document.getElementById("demo").innerHTML = '<div class="alert alert-success glyphicon glyphicon-user" role="alert"> '+msg+'</div>';
+
+        break;
+    case 2:
+        document.getElementById("demo").innerHTML = '<div class="alert alert-danger glyphicon glyphicon-remove " role="alert">'+msg+'</div>';
+        break;
+
+    default:
+        
+        break;
+}}
+            
+
+
+      function validar(cedula ) {
               if (isNaN(cedula)==false) {
         //Preguntamos si la cedula consta de 10 digitos
      if(cedula.length == 10){
@@ -64,20 +83,23 @@
 
           //Validamos que el digito validador sea igual al de la cedula
           if(digito_validador == ultimo_digito){
-            console.log('la cedula:' + cedula + ' es correcta');
+            es(1,' La cedula:' + cedula + ' es correcta');
+
           }else{
-            alert('la cedula:' + cedula + ' es incorrecta');
+                    es(2,' La cedula:' + cedula + ' es incorrecta');
           }
           
         }else{
           // imprimimos en consola si la region no pertenece
-          alert('Este usuario no pertenece a ningun registro');
+            es(2,' Este usuario no pertenece a ningun registro');
+
         }
      }else{
         //imprimimos en consola si la cedula tiene mas o menos de 10 digitos
-        alert('Esta usuario no es correcto error 10');
+        es(2,' Esta usuario no es correcto error 10');
+
      }
 
-    }else alert('Su usuario no debe contener caracteres especiales');
+    }else {  es(2,' Su usuario no debe contener caracteres especiales');} 
       }
       
