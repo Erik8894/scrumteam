@@ -14,7 +14,9 @@
         <script src="js/validaciones.js"></script>
     </head>
     <body background ="fondo.png">
-        <center>
+        <div class="container">
+            <div class="main main-center">
+        
         <form action="iniciar" method="post">
             <h1>Sistema de Autentificación TEST PAP</h1>
             <div class="input-group">
@@ -28,7 +30,9 @@
             <input type="password" class="form-control" name="contra"aria-describedby="basic-addon1" onchange="validar(this.value)" placeholder="Ingrese Contraseña"/><br>
             </div>
             <input type="submit" value="Iniciar Sesión"/><br>
+            
         </form>
-        </center>
+            </div>
+        </div>
     </body>
 </html>
