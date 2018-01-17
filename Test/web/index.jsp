@@ -14,7 +14,7 @@
         <script src="js/validaciones.js"></script>
     </head>
     <body background ="fondo.png">
-        <div class="container">
+        <div class="container col-md-7 cmiddle-col">
             <div class="main main-center">
         
         <form action="iniciar" method="post">
