@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import metodos.clsmetodos;
 
 /**
@@ -30,6 +31,8 @@ public class InicioSesion extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        HttpSession sesion =request.getSession(true);
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
        String usuario=request.getParameter("user");
@@ -37,11 +40,14 @@ public class InicioSesion extends HttpServlet {
         clsmetodos co=new clsmetodos();
         if(co.autentificacion(usuario, contraseña))
         {
+            sesion.setAttribute("usuario", co.usuario(usuario));
+            sesion.setAttribute("validacion", true);
             response.sendRedirect("test.jsp");
         }
         
         else
         {
+            sesion.setAttribute("validacion", false);
             response.sendRedirect("falloLogueo.jsp");
         }
     }

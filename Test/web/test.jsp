@@ -4,7 +4,7 @@
     Author     : Erik
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>  
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/estilos.css">
         <title>TEST PAP</title>
+        <%@page session='true'%>
         
     </head>
     <body>
@@ -21,6 +22,7 @@
         <div class="container">
             <div class="row">
                 <center><h1>Banco de preguntas</h1></center>
+                <center><h1>Bienvenido <%out.println(session.getAttribute("usuario"));%></h1></center>
             </div>
         </div>
         </header>

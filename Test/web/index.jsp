@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.js"></script>
         <script src="js/validaciones.js"></script>
+        <%@page session='true'%>
     </head>
     <body background ="img/fondo.jpg">
         <div class="container">

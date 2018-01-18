@@ -122,4 +122,26 @@ public class clsmetodos
                 }
                 return false;      
         }
+        public String usuario(String id){
+            	ResultSet rs=null;
+		ClsConexion obj=new ClsConexion();
+                try {
+                String con="Select id_usuario,nombre_usuario from usuario where id_usuario='"+id+"'";
+                rs=obj.Consulta(con);
+                while(rs.next())
+                {
+                
+                
+                
+                    return rs.getString(2);
+                 
+                }
+                           
+                
+            } catch (Exception e) {
+                    System.err.println("error"+e);
+            }
+            return "Nada que ver ";
+        }
+
 }
