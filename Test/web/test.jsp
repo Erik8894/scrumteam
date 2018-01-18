@@ -16,7 +16,7 @@
         <%@page session='true'%>
         
     </head>
-    <body>
+    <body  <%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
         <header>
         
         <div class="container">

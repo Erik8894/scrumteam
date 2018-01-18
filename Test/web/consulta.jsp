@@ -7,8 +7,9 @@
 <title>Libreria</title>
 <link rel="stylesheet" type="text/css"
     href="estilo.css" media="screen">
+        <%@page session='true'%>
 </head>
-<body>
+<body<%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
 <h1>Estantería</h1>
 <%
 clsmetodos obj=new clsmetodos();

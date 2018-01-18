@@ -41,13 +41,13 @@ public class InicioSesion extends HttpServlet {
         if(co.autentificacion(usuario, contraseña))
         {
             sesion.setAttribute("usuario", co.usuario(usuario));
-            sesion.setAttribute("validacion", true);
+            sesion.setAttribute("validacion", "1");
             response.sendRedirect("test.jsp");
         }
         
         else
         {
-            sesion.setAttribute("validacion", false);
+            sesion.setAttribute("validacion", "0");
             response.sendRedirect("falloLogueo.jsp");
         }
     }
