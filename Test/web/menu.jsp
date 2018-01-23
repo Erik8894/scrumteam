@@ -18,6 +18,15 @@
         <h1>Elija una Opcion</h1>
      
         <a href="Registro.jsp" class="btn btn-default">Registro Aspirante</a>
+        
+        <br>
+        
+        <a href="ConsultaID.jsp" class="btn btn-default">Historial Aspirante</a>
+        
+        <br>
+        
+        <a href="ConsultaID.jsp" class="btn btn-default">Consulta</a>
+            
    
         
         
