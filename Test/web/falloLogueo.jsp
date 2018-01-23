@@ -14,7 +14,7 @@
     <body>
     <center>
         <h1>Usuario y/o Contraseña incorrectos!!</h1>
-        <h3>Usted no pertenece a la base de datos de testPAP...</h3><a href="Registro.jsp">Registrarse</a>
+        <h3>Usted no pertenece a la base de datos de testPAP...</h3><a href="Registro.jsp">Registrarse aqui</a>
         <h3>Regresar al Inicio</h3><a href="index.jsp">Inicio</a>
     </center>
         
