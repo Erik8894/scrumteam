@@ -15,7 +15,7 @@
 <html>
 <body<%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
 <h1>CONSULTA DE RESULTADOS</h1>
-<table><td>Ingrese ID:</td><td><input> </td></table>
+<table><td>Ingrese ID:</td><td><input type="text" name="cedula"><br> </td></table>
 
 <%
 metodos.clsmetodos obj=new metodos.clsmetodos();
