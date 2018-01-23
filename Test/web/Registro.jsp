@@ -20,6 +20,7 @@
         <h3>Ingrese su Profesión</h3><input type="text" name="prof"><br>
         <h3>Ingrese una Contraseña</h3><input type="password" name="pass"><br>
         <h3>REGISTRAR</h3><input type="submit" name="reg" value="REGISTRAR"><br>
+       
         </form>
     </center>
     </body>

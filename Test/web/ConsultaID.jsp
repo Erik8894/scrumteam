@@ -27,8 +27,10 @@
 <%
 metodos.clsmetodos obj=new metodos.clsmetodos();
 String tabla;
-tabla=obj.armar_tablaID(request.getParameter(cedula));
+tabla=obj.armar_tablaID(request.getParameter("cedula"));
 %>
 <%=tabla%>
+
+ <a href="http://google.com" class="btn btn-default">Go to Google</a>
 </body>
 </html>
