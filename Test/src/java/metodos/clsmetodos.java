@@ -38,13 +38,13 @@ public class clsmetodos
 		return combo;
 	}
 
-	public String armar_tablaID( )
+	public String armar_tablaID( String id)
 	{
 		String tabla="";
 		
 		// consultar elementos
 		
-				String sql="Select usuario.nombre_usuario, relationship_1.puntaje  from relationship_1,usuario where relationship_1.id_aspirante='00' and relationship_1.id_aspirante=usuario.id_usuario;" ;
+				String sql="Select usuario.nombre_usuario, relationship_1.puntaje  from relationship_1,usuario where relationship_1.id_aspirante='"+id+"' and relationship_1.id_aspirante=usuario.id_usuario;" ;
 				ResultSet rs=null;
 				ClsConexion obj=new ClsConexion();
 		// Armar tabla

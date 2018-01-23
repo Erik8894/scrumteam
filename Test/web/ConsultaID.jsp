@@ -27,7 +27,7 @@
 <%
 metodos.clsmetodos obj=new metodos.clsmetodos();
 String tabla;
-tabla=obj.armar_tablaID();
+tabla=obj.armar_tablaID(request.getParameter(cedula));
 %>
 <%=tabla%>
 </body>
