@@ -17,20 +17,29 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale1.0, minimun-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/estilos.css">
+        
+        <script lenguaje="javascript">
+            function mifuncion()
+            {
+                metodos.clsmetodos obj=new metodos.clsmetodos();
+                String tabla;
+                tabla=obj.armar_tablaID(request.getParameter("cedula"));
+            }
+        </script> 
     </head>
-<body<%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
+<body>
 <h1>CONSULTA DE RESULTADOS</h1>
 <table><td>Ingrese ID:</td><td><input type="text" name="cedula"><br> </td></table>
-<br>
-<br>
 
+<input type="button" name="tuboton" onclick="mifuncion()"> Button
+<br>
 <%
 metodos.clsmetodos obj=new metodos.clsmetodos();
 String tabla;
 tabla=obj.armar_tablaID(request.getParameter("cedula"));
 %>
 <%=tabla%>
-
- <a href="http://google.com" class="btn btn-default">Go to Google</a>
+<br>
+ <a href="Menu.jsp" class="btn btn-default">Inicio</a>
 </body>
 </html>

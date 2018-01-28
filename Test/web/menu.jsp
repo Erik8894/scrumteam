@@ -14,16 +14,16 @@
         <link rel="stylesheet" href="css/estilos.css">
         <title>Menu</title>
     </head>
-    <body<%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
-        <h1>Elija una Opcion</h1>
+    <body>
+                <h1>Elija una Opcion</h1>
      
         <a href="Registro.jsp" class="btn btn-default">Registro Aspirante</a>
-        
-        <br>
+        <br></br>
+        <br></br>
         
         <a href="ConsultaID.jsp" class="btn btn-default">Historial Aspirante</a>
-        
-        <br>
+        <br></br>
+        <br></br>
         
         <a href="ConsultaID.jsp" class="btn btn-default">Consulta</a>
             
