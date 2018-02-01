@@ -1,3 +1,9 @@
+/*Background*/
+
+body{
+    background-image: url("../img/fondo_azul2.jpg");
+    background-color: #58b6e5;
+}
 /*--header-- */
 *{
     box-sizing: border-box;
@@ -27,8 +33,8 @@ a.button {
 }
 
 .formulario h2{
-    font-size: 16px;
-    color: #001F3F;
+    font: bold 22px "Trebuchet MS";
+    color:  #fff;
     margin-bottom: 20px;
     margin-left: 20px;
 }

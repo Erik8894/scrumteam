@@ -20,29 +20,7 @@
         <img src="img/scrum team medium.png" class="center-block" />
     </div>
     <body background ="img/fondoindex.jpg">
-         <%--
-        <div class="container">
-            <div class="main main-center col-md-5 cmiddle-col" >
-       
-        <form action="iniciar" method="post">
-            <h1>Sistema de Autentificación TEST PAP</h1>
-            <div class="input-group">
-            <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon1"></span>
-            <input type="text" class="form-control"  name="user"aria-describedby="basic-addon1" onchange="validar(this.value)" placeholder="Ingrese Usuario"/><br>
-            </div>
-            <div id="demo">
-            </div>
-            <div class="input-group">
-            <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon1"></span>
-            <input type="password" class="form-control" name="contra"aria-describedby="basic-addon1" onchange="validar(this.value)" placeholder="Ingrese Contraseña"/><br>
-            </div>
-            <input type="submit" value="Iniciar Sesión"/><br>
-            
-        </form>
-            </div>
-        </div>
-        
-        --%>
+
         <div class = "container">
 	<div class="wrapper">
 		<form action="iniciar" method="post" name="Login_Form" class="form-signin">       
