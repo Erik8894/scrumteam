@@ -27,7 +27,7 @@
         </div>
         </header>
                 <br>
-        <form action="" class="formulario">
+                <form action="resultado.jsp" class="formulario" method="post">
             <div class="radio-toolbar">
                 <div class="form-group">
                     <h2>Cuando alguien te pide un favor y no tienes ganas de hacer o tampoco tiempo usted:</h2>
@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-10">
-                    <input type="radio" id="r11" name="rp1">
+                            <input type="radio" id="r11" name="rp1" value="0.7">
                     <label for="r11" id="r11" >Pese a todo lo hago, no sé decir que no.</label>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-10">
-                    <input type="radio" id="r21" name="rp1">
+                    <input type="radio" id="r21" name="rp1" value="0.3">
                     <label for="r21" id="r21">Doy una excusa por tonta que sea para no tener que hacer ese favor.</label>
                     </div>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-10">
-                    <input type="radio" id="r31" name="rp1">
+                    <input type="radio" id="r31" name="rp1" value="1">
                     <label for="r31" id="r31">Le digo la verdad, que no me apetece o no puedo hacer lo que me pide.</label>
                     </div>
                         </div>
@@ -64,7 +64,7 @@
                     <div class="row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-10">
-                    <input type="radio" id="r12" name="rp2">
+                    <input type="radio" id="r12" name="rp2" value="0">
                     <label for="r12" id="r12">Le atiendo, pero procuro cortar cuanto antes con educación.</label>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-10">
-                    <input type="radio" id="r22" name="rp2">
+                    <input type="radio" id="r22" name="rp2" value="0.5" >
                     <label for="r22" id="r22">Le atiendo sin mostrar ninguna prisa en que se marche.</label>
                     </div>
                     </div>
@@ -80,7 +80,7 @@
                     <div class="row">
                         <div class="col-lg-1"></div>
                         <div class="col-lg-10">
-                    <input type="radio" id="r32" name="rp2">
+                    <input type="radio" id="r32" name="rp2" value="1.5">
                     <label for="r32" id="r32">No quiero interrupciones, así que procuro que no me vea y que otra persona diga que estoy muy ocupado.</label>
                     </div>
                         </div>
@@ -968,8 +968,8 @@
                     
                 </div>
             <div class="button">
-                <center><button type="button" class="btn btn-success" id="enviar">Enviar Test</button></center>
-                <%-- <input class="button" type="submit" name="enviar" id="enviar" value="Enviar Test"/> --%>
+                <%--<center><button type="button" class="btn btn-success" id="enviar">Enviar Test</button></center>--%>
+                <center><input class="btn btn-success" type="submit" name="enviar" id="enviar" value="Enviar Test"/> </center>
                 
             </div>
             
