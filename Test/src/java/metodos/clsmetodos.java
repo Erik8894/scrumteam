@@ -143,5 +143,35 @@ public class clsmetodos
             }
             return "Nada que ver ";
         }
-
+        
+             public String pregunta(String id){
+            	ResultSet rs=null;
+		ClsConexion obj=new ClsConexion();
+                try {
+                String con="Select pregunta from preguntas where id_pregunta='"+id+"'";
+                rs=obj.Consulta(con);
+                while(rs.next())
+                {
+                    return rs.getString(1);
+                }   
+            } catch (Exception e) {
+                    System.err.println("error"+e);
+            }
+            return "Nada que ver ";
+        }
+             public String respueta(String id){
+            	ResultSet rs=null;
+		ClsConexion obj=new ClsConexion();
+                try {
+                String con="Select pregunta from preguntas where id_pregunta='"+id+"'";
+                rs=obj.Consulta(con);
+                while(rs.next())
+                {
+                    return rs.getString(1);
+                }   
+            } catch (Exception e) {
+                    System.err.println("error"+e);
+            }
+            return "Nada que ver ";
+        }
 }
