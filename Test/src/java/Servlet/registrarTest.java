@@ -15,9 +15,9 @@ import metodos.clsmetodos;
 
 /**
  *
- * @author Wilson
+ * @author Erik
  */
-public class registrarUsuario extends HttpServlet {
+public class registrarTest extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,9 +33,9 @@ public class registrarUsuario extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
        
-        String cedula=request.getParameter("cedula");
-        String nomUs=request.getParameter("nomUs");
-        String profes=request.getParameter("prof");
+        String cedula=request.getParameter("rp1");
+        String nomUs=request.getParameter("rp2");
+        String profes=request.getParameter("");
         String contra=request.getParameter("pass");
         clsmetodos co=new clsmetodos();
        if(co.ingresarUsuario_1(cedula, nomUs, profes, contra))

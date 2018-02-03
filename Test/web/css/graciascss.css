@@ -1,0 +1,32 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 3, 2018, 2:25:17 AM
+    Author     : Erik
+*/
+body{
+   
+    background-image: url("../img/fondo_green.jpg");
+    background-color: #fbfff7;
+    background-repeat: no-repeat;
+}
+.btn-success{
+    font: bold 40px "Trebuchet MS";
+    height: 170px;
+    width: 125px;
+    border-radius: 15px;
+    background-image: url(../img/botonsig2.png);
+    background-repeat: no-repeat;
+}
+    
+   
+
+
+
+
+
+
+
