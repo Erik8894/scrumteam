@@ -156,7 +156,7 @@ public class clsmetodos
             	ResultSet rs=null;
 		ClsConexion obj=new ClsConexion();
                 try {
-                String con="Select id_pregunta, pregunta, valor_pregunta from preguntas where id_pregunta='"+id+"'";
+                String con="Select id_pregunta, pregunta, valor from preguntas where id_pregunta='"+id+"'";
                 rs=obj.Consulta(con);
                 while(rs.next())
                 {
