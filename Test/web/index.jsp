@@ -13,6 +13,9 @@
         <link rel="stylesheet" href="css/logincss.css">
         <script src="js/bootstrap.js"></script>
         <script src="js/validaciones.js"></script>
+        <script type="text/javascript" src="js/alertify.js"></script>
+        <link rel="stylesheet" href="css/alertify.core.css" />
+		<link rel="stylesheet" href="css/alertify.default.css" />
         <title>LOGIN</title>
         <%@page session='true'%>
     </head>
@@ -39,8 +42,14 @@
                             <input type="password" class="form-control" name="contra"aria-describedby="basic-addon1" onchange="validar(this.value)" required="" placeholder="Ingrese Contraseña"/><br>
                          </div>
                           
-			<button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Iniciar Sesión" type="Submit">Iniciar Sesión</button>  			
+			<button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Iniciar Sesión" onClick="notificacion()" type="Submit">Iniciar Sesión</button>  			
 		</form>			
+            <script>
+                			function notificacion(){
+				alertify.log("Estamos Generando su test por favor aguarde un momento, gracias"); 
+				return false;
+			}
+            </script>
 	</div>
         </div>  
     </body>

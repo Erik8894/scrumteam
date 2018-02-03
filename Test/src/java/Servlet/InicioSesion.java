@@ -37,6 +37,7 @@ public class InicioSesion extends HttpServlet {
         PrintWriter out = response.getWriter();
        String usuario=request.getParameter("user");
        String contraseña=request.getParameter("contra");
+               sesion.setAttribute("usr", usuario);
         clsmetodos co=new clsmetodos();
         if(co.autentificacion(usuario, contraseña))
         {

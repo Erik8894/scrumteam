@@ -21,8 +21,8 @@
          <%  String [] preg=(session.getAttribute("preg")+"").split(":");
             double promsum=0;
             ArrayList<EntidadTest> list=new ArrayList<EntidadTest>();
-            EntidadTest et=new EntidadTest();
             for(int i=0;i<preg.length;i++){
+            EntidadTest et=new EntidadTest();
             out.print(request.getParameter("rp"+preg[i]));
             String []st=(request.getParameter("rp"+preg[i])+"").split(":");
             et.setPregunta(st[0]);
@@ -33,9 +33,10 @@
             et.setValorMaxRespuesta(Double.parseDouble(st[4]));
             list.add(et);
             }
-            
+                            out.print("<br> "+session.getAttribute("usr"));
                          for(int i=0;i<list.size();i++) {
                              
+                             out.print("<br> id Pregunta: "+list.get(i).getPregunta()+" Valor de pregunta: "+list.get(i).getValorPregunta()+" Id respuesta: "+list.get(i).getRespuesta()+" Valor de respuesta: "+list.get(i).getValorRespuesta()+"Valor maximo respuesta: "+list.get(i).getValorMaxRespuesta()+" Suma promedio preguntas: "+promsum);
                          }
         %>
     </body>

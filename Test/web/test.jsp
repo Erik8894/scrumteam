@@ -33,9 +33,9 @@
             <div class="radio-toolbar">
                  <%
                     session.setAttribute("data_Preguntas", "");
-                    int[] lista=new int[2];
+                    int[] lista=new int[20];
                     int repit=0;
-                    while (repit<2){
+                    while (repit<20){
                         
                     int numero = (int) (Math.random() * 30) + 1;
 //                                                            System.out.println(numero+ "en posicion "+repit);
