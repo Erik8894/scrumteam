@@ -34,9 +34,14 @@
             list.add(et);
             }
                             out.print("<br> "+session.getAttribute("usr"));
+                            
+                            double sum=0;
+                            double sum1=0;
                          for(int i=0;i<list.size();i++) {
-                             
+                             double prop=(list.get(i).getValorPregunta()*100)/promsum;
+                             double vf=(list.get(i).getValorRespuesta()*prop)/list.get(i).getValorMaxRespuesta();
                              out.print("<br> id Pregunta: "+list.get(i).getPregunta()+" Valor de pregunta: "+list.get(i).getValorPregunta()+" Id respuesta: "+list.get(i).getRespuesta()+" Valor de respuesta: "+list.get(i).getValorRespuesta()+"Valor maximo respuesta: "+list.get(i).getValorMaxRespuesta()+" Suma promedio preguntas: "+promsum);
+                             out.print("<br> ValorPregunta/100 : "+prop+" Valor respuesta real: "+vf+" Incremental/100 :"+ (sum=sum+prop) + " incremental % : "+(sum1=sum1+vf));
                          }
         %>
     </body>
