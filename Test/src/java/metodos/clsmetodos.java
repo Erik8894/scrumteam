@@ -3,9 +3,15 @@ package metodos;
 import java.sql.ResultSet;
 import com.datos.ClsConexion;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
 
 public class clsmetodos 
 {
+    private double max=0;
+
+    public double getMax() {
+        return max;
+    }
 	public String armar_combo()
 	{
 		String combo="";
@@ -144,34 +150,52 @@ public class clsmetodos
             return "Nada que ver ";
         }
         
-             public String pregunta(String id){
+            
+                 public EntidadTest pregunta(String id){
+                 EntidadTest et=new EntidadTest();
             	ResultSet rs=null;
 		ClsConexion obj=new ClsConexion();
                 try {
-                String con="Select pregunta from preguntas where id_pregunta='"+id+"'";
+                String con="Select id_pregunta, pregunta, valor_pregunta from preguntas where id_pregunta='"+id+"'";
                 rs=obj.Consulta(con);
                 while(rs.next())
                 {
-                    return rs.getString(1);
+                    
+                    et.setId(rs.getString(1));
+                    et.setTexto(rs.getString(2));
+                    et.setValor(rs.getString(3));
+                    return et;
+                    
                 }   
             } catch (Exception e) {
                     System.err.println("error"+e);
             }
-            return "Nada que ver ";
+            return et;
         }
-             public String respueta(String id){
+             public ArrayList <EntidadTest> respueta(String id){
             	ResultSet rs=null;
+                ArrayList list=new ArrayList();
 		ClsConexion obj=new ClsConexion();
                 try {
-                String con="Select pregunta from preguntas where id_pregunta='"+id+"'";
+                String con="Select respuesta.id_respuesta, respuesta, banco_preguntas.valor from respuesta, banco_preguntas where banco_preguntas.id_respuesta=respuesta.id_respuesta and id_pregunta='"+id+"'";
                 rs=obj.Consulta(con);
+                max=0;
                 while(rs.next())
                 {
-                    return rs.getString(1);
+                                    EntidadTest et=new EntidadTest();
+                     
+                    et.setId(rs.getString(1));
+                    et.setTexto(rs.getString(2));
+                    et.setValor(rs.getString(3));
+                    if (max<Double.parseDouble(rs.getString(3)))max=Double.parseDouble(rs.getString(3));
+                   // out.println("id: "+rs.getString(1)+" respuesta: "+rs.getString(2)+" valor: "+rs.getString(3));
+                    list.add(et);
+                    
                 }   
+                //return list;
             } catch (Exception e) {
                     System.err.println("error"+e);
             }
-            return "Nada que ver ";
+            return list;
         }
 }

@@ -4,6 +4,8 @@
     Author     : Erik
 --%>
 
+<%@page import="metodos.EntidadTest"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,8 +18,22 @@
         
         <h1>Respuestas</h1>
         <br/><br/>
-        Pregunta 1: ${param.rp1} 
-        <br/>
-        Pregunta 2: ${param.rp2}
+         <%  String [] preg=(session.getAttribute("preg")+"").split(":");
+            double promsum=0;
+            ArrayList<EntidadTest> list=new ArrayList<EntidadTest>();
+            EntidadTest et=new EntidadTest();
+            for(int i=0;i<preg.length;i++){
+            out.print(request.getParameter("rp"+preg[i]));
+            String []st=(request.getParameter("rp"+preg[i])+"").split(":");
+            et.setPregunta(st[0]);
+            et.setValorPregunta(Double.parseDouble(st[1]));
+            promsum=promsum+Double.parseDouble(st[1]);
+            et.setRespuesta(st[2]);
+            et.setValorRespuesta(Double.parseDouble(st[1]));
+            et.setValorMaxRespuesta(Double.parseDouble(st[1]));
+            list.add(et);
+            }
+        
+        %>
     </body>
 </html>
