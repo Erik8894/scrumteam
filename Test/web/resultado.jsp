@@ -16,7 +16,7 @@
         
         <h1>Respuestas</h1>
         <br/><br/>
-        Pregunta 1: ${param.rp1}
+        Pregunta 1: ${param.rp1} 
         <br/>
         Pregunta 2: ${param.rp2}
     </body>
