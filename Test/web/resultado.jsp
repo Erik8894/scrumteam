@@ -29,8 +29,8 @@
             et.setValorPregunta(Double.parseDouble(st[1]));
             promsum=promsum+Double.parseDouble(st[1]);
             et.setRespuesta(st[2]);
-            et.setValorRespuesta(Double.parseDouble(st[1]));
-            et.setValorMaxRespuesta(Double.parseDouble(st[1]));
+            et.setValorRespuesta(Double.parseDouble(st[3]));
+            et.setValorMaxRespuesta(Double.parseDouble(st[4]));
             list.add(et);
             }
         
