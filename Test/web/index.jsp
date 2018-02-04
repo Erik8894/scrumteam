@@ -27,7 +27,7 @@
         <div class = "container">
 	<div class="wrapper">
 		<form action="iniciar" method="post" name="Login_Form" class="form-signin">       
-		    <h3 class="form-signin-heading">Sistema de Autentificación TEST PAP</h3>
+                    <h3 class="form-signin-heading" class="text-primary">Sistema de Autentificación TEST PAP</h3>
 			  <hr class="colorgraph"><br>
 			  
                           <div class="input-group">

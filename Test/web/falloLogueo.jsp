@@ -14,21 +14,24 @@
         <link rel="stylesheet" href="css/logincss.css">
         <script src="js/bootstrap.js"></script>
         <script src="js/validaciones.js"></script>
-        <title>Registro</title>
+        <title>Fallo de Ingreso</title>
     </head>
     <div class = "col-12">
         <img src="img/scrum team medium.png" class="center-block" />
-    </div>
-    <div class = "col-12">
-        <img src="img/registroI.png" class="center-block" />
-    </div>
-    
-    <body background ="img/fondoR.jpg">
-    <center>
-        <h1>Usuario y/o Contraseña incorrectos!!</h1>
-        <h3>Usted no pertenece a la base de datos de testPAP...</h3><a href="Registro.jsp">Registrarse aqui</a>
-        <h3>Regresar al Inicio</h3><a href="index.jsp">Inicio</a>
-    </center>
+    </div>     
+    <body background ="img/fondoF.jpg">
+        <div class = "container">
+            <div class="wrapper">
+                
+                  <h1 class="form-signin-heading"><b><p class="text-primary">Usuario y/o Contraseña incorrectos!!</p></b></h1>
+                  <h3 class="form-signin-heading"><p class="text-primary">Usted no pertenece a la base de datos de testPAP...</p></h3>
+                  <h3 class="form-signin-heading"><button type="button" class="btn btn-link"><a href="Registro.jsp"><i><u><b>Registrarse aqui</b></u></i></a></button></h3>
+                  <h3 class="form-signin-heading"><p class="text-primary">Regresar al Inicio</p></h3>
+                  <h3 class="form-signin-heading"><button type="button" class="btn btn-link"><a href="index.jsp"><i><u><b>Inicio</b></u></i></a></button></h3>
+              
+                  
+           </div>
+        </div>
         
     </body>
 </html>
