@@ -50,3 +50,41 @@ button {
     width: auto; 
     height: auto; 
 }
+
+table.tbConsulta
+{
+  width: 50%;
+  align-content: center;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #ffcc00;
+  border-style: solid;
+  margin: 0 auto;
+  
+}
+
+table.tbConsulta td, table.tbConsulta tr {
+  border-width: 2px;
+  border-color: #ffcc00;
+  border-style: solid;
+  padding: 3px;
+  color: black;
+}
+
+table.tbConsulta thead {
+  background-color: #ffcc00;
+  
+}
+
+img{
+    height: 30%;
+    width: auto;
+}
+
+.formulario
+{
+    align-content:center;
+    margin-top: 120px;
+    color: blue;
+}

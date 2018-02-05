@@ -24,15 +24,22 @@
         
     </head>
 <body>
-<h1>CONSULTA DE RESULTADOS</h1>
-
-<form action="buscar" method="post" name="Busqueda" class="form-actions"> 
-    <div class=" container">
-    <div class="col-md-12">
-        <table><td>Ingrese ID:</td><td>  </td><td><input type="text" name="cedula"><br> </td> <td><button type="button" class="boton" name="consultar" id="Btn_consultar" onClick="mifuncion()" alt="Envie sus mensaje"><img src= "img/buscar.png" height="auto" width="auto"></button></td> </table>
-        <br>   
+    <div class="h1">
+      
+            <h1>CONSULTA DE RESULTADOS</h1>
+       
     </div>
-</div>
+
+    <div class="formulario">
+        <form action="buscar" method="post" name="Busqueda" class="form-actions"> 
+
+            <div class="table table-hover">
+                <table><td>Ingrese ID:</td><td>  </td><td><input type="text" name="cedula"><br> </td> <td><button type="button" class="boton" name="consultar" id="Btn_consultar" onClick="mifuncion()"  alt="Envie sus mensaje"><img src= "img/buscar.png" ></button></td> </table>
+                <br>   
+            </div>
+    </div>
+
+
 </form>
 
 
@@ -42,11 +49,14 @@
                 alert('imprimiendo resultados');
                 metodos.clsmetodos obj=new metodos.clsmetodos();
                 String tabla;
-                tabla=obj.armar_tablaID(request.getParameter("cedula")));
-                document.body.appendChild(tabla);
+                tabla=obj.armar_tablaID());
+                body.appendChild(tabla);
             }
 </script>
+<a href="javascript:imprSelec('muestra')">Imprimir Tabla</a>
+<div id="muestra"> 
 
+</div>
 
 <%
                 metodos.clsmetodos obj=new metodos.clsmetodos();

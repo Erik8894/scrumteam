@@ -16,12 +16,14 @@
         <title>Menu</title>
          <%@page session='true'%>
     </head>
+    
     <body background="img/f1.jpg">
-        <div class="container">
-            <div class="control-label">
-                 <h1>BIENVENIDO</h1>
+        <form class="form-group" action="/Test/Logout">
+            <div class="container">
+                <div class="control-label">
+                    <h1>BIENVENIDO</h1>
+                </div>
             </div>
-        </div>
        
          <div id="content_login_in">
                 <table border="0" width="80%" heigth="100px" align="center" class="content_table">
@@ -36,8 +38,14 @@
                         <td><a href="ConsultaID.jsp"> <img src="img/historial.png" alt="Historial" /></a></td> 
                     </tr>
                     
+                    <tr><td>    </td></tr>
+                    <tr><td></td></tr><tr><td></td></tr>
+                    <tr align="center"><td colspan="3"><input type="submit" value="Cerrar Sesion"></td><td></td><td></td></tr>
+                    
                 </table>
          </div>
+        </form>
+        
     </body>
        
 </html>

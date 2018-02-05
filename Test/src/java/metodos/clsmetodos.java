@@ -55,7 +55,7 @@ public class clsmetodos
                                 ResultSet rs=null;
 				ClsConexion obj=new ClsConexion();
 		// Armar tabla
-		tabla="<table border=2>";
+		tabla="<table border=2 class='tbConsulta'>";
 		
 		// consulta
 		tabla+="<tr><td>Usuario</td><td>Puntaje</td></tr>";
