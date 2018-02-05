@@ -14,7 +14,7 @@
         <title>Respuestas</title>
          <%@page session='true'%>
     </head>
-    <body> <%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>
+    <body> <%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8080/Test/index.jsp\";</script");%>
         
         <h1>Respuestas</h1>
         <br/><br/>

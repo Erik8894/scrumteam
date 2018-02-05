@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05/02/2018, 1:05:44
+    Author     : USER
+*/
+
+body{
+    background-image: url("../img/lapfondo.jpg");
+    background-position: center;
+    background-color: #58b6e5;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+    align-items: center;
+    
+    text-align: center;
+    
+}
+h1{
+    font-family: times new roman;
+    font-style: italic;
+    text-align: center;
+    color: #0f0f0f;
+   
+}
+
+table{
+    align-content: center;
+    align-items: center;
+}
+
+
+button { 
+    border:none; 
+    width: auto; 
+    height: auto; 
+}

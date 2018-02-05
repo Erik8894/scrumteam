@@ -51,7 +51,8 @@ public class clsmetodos
 		// consultar elementos
 		
 				String sql="Select usuario.nombre_usuario, relationship_1.puntaje  from relationship_1,usuario where relationship_1.id_aspirante='"+id+"' and relationship_1.id_aspirante=usuario.id_usuario;" ;
-				ResultSet rs=null;
+				String sql1="select nombre_usuario,tipo from usuario;";
+                                ResultSet rs=null;
 				ClsConexion obj=new ClsConexion();
 		// Armar tabla
 		tabla="<table border=2>";
@@ -60,7 +61,7 @@ public class clsmetodos
 		tabla+="<tr><td>Usuario</td><td>Puntaje</td></tr>";
 				try
 				{
-					rs=obj.Consulta(sql);
+					rs=obj.Consulta(sql1);
 					while(rs.next())
 					{
 						// ahi va los options segun las x que se repitan

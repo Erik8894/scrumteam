@@ -1,8 +1,8 @@
 /*Background*/
 
 body{
-    background-image: url("../img/fondo_azul2.jpg");
-    background-color: #58b6e5;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /*--header-- */
 *{
@@ -30,6 +30,13 @@ a.button {
 
     text-decoration: none;
     color: initial;
+    align-items: center;
+}
+h1{
+    font-family: times new roman;
+    font-style: inherit;
+    font-style: italic;
+    text-align: center;
 }
 
 .formulario h2{
@@ -67,5 +74,39 @@ a.button {
   background: none;
   border: 3px solid #0275d8;
    background: rgba(69, 219, 0, 0.23);
+}
+.content_table {
+    
+    min-height: 500px;
+    margin-left: -5px;
+    padding: 20px;
+    margin: 70px auto;
+    clear: both;
+    padding: 30px;
+    position: relative;
+}
+img {
+    height: 250px;
+    width: auto;
+    position: relative;
+}
+
+h1 {
+	/*background-color: #FFFFFF;*/
+	width: 100%;
+	height: 110px;
+	padding: 0;
+	position: relative;
+	z-index: 100;
+	margin-bottom: -110px;
+	top: 0;
+	left: 0px;
+        color: #FFFFFF;
+	/* box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); */
+}
+td{
+    color:#FFFFFF;
+    font-family: times new roman;
+    font-size: 20px;
 }
 
