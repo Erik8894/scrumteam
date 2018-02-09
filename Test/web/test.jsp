@@ -18,12 +18,14 @@
         <%@page session='true'%>
         
     </head>
-    <body  <%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
+    <body background ="img/fondo_azul2.jpg" <%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
+        
         <header>
         
         <div class="container">
             <div class="row">
                 <center><h1>Banco de preguntas</h1></center>
+                <br/><br/>
                 <center><h1>Bienvenido <%out.println(session.getAttribute("usuario"));Procesos pr=new Procesos();%></h1></center>
             </div>
         </div>
@@ -33,9 +35,9 @@
             <div class="radio-toolbar">
                  <%
                     session.setAttribute("data_Preguntas", "");
-                    int[] lista=new int[20];
+                    int[] lista=new int[5];
                     int repit=0;
-                    while (repit<20){
+                    while (repit<5){
                         
                     int numero = (int) (Math.random() * 30) + 1;
 //                                                            System.out.println(numero+ "en posicion "+repit);
