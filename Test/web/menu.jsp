@@ -35,7 +35,7 @@
                     <tr align="center">
                         <td><a id="img1" href="Registro.jsp"> <img src="img/registrar_datos.png" alt="Registrar Docentes" /> </a></td>
                         <td><a href="ConsultaID.jsp"> <img src="img/consulta.png" alt="Consultas" /></a></td>
-                        <td><a href="ConsultaID.jsp"> <img src="img/historial.png" alt="Historial" /></a></td> 
+                        <td><a href="Historial.jsp"> <img src="img/historial.png" alt="Historial" /></a></td> 
                     </tr>
                     
                     <tr><td>    </td></tr>

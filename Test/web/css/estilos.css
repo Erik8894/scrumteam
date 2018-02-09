@@ -111,3 +111,22 @@ td{
     font-size: 20px;
 }
 
+.Fields {
+	background-color: #E9E9E9;
+}
+
+table
+{
+    align-content: center;
+}
+
+.t2
+{
+    color: black;
+}
+
+.form1
+{
+    margin-top: 100px;
+    margin-left: 160px;
+}

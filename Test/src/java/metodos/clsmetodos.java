@@ -12,61 +12,31 @@ public class clsmetodos
     public double getMax() {
         return max;
     }
-	public String armar_combo()
-	{
-		String combo="";
-		//consulta
-		String con1="Select * from autor";
-		ResultSet rs=null;
-		ClsConexion obj=new ClsConexion();
-		
-		//Combo select
-		combo="<select name=comboaut>"; // siempre se debe usar los \ en un string
-
-		// consulta
-		
-		try
-		{
-			rs=obj.Consulta(con1);
-			while(rs.next())
-			{
-				// ahi va los options segun las x que se repitan	
-				combo+="<option value="+rs.getInt(2)+">"+rs.getString(1)+"</option>";
-				
-			}
-			combo +="</select>";
-		}
-		catch(Exception e)
-		{
-			
-		}
-		
-		return combo;
-	}
-
-	public String armar_tablaID( String id)
+	public String armar_tablaID(String id)
 	{
 		String tabla="";
 		
 		// consultar elementos
+                String j=id;
+                System.out.println(j);
 		
-				String sql="Select usuario.nombre_usuario, relationship_1.puntaje  from relationship_1,usuario where relationship_1.id_aspirante='"+id+"' and relationship_1.id_aspirante=usuario.id_usuario;" ;
-				String sql1="select nombre_usuario,tipo from usuario;";
+				String sql="Select usuario.nombre_usuario, historico.valor, historico.fecha_test from historico,usuario where historico.id_usuario='"+id+"' and historico.id_usuario=usuario.id_usuario;" ;
+				//String sql1="select nombre_usuario,tipo from usuario;";
                                 ResultSet rs=null;
 				ClsConexion obj=new ClsConexion();
 		// Armar tabla
 		tabla="<table border=2 class='tbConsulta'>";
 		
 		// consulta
-		tabla+="<tr><td>Usuario</td><td>Puntaje</td></tr>";
+		tabla+="<tr><td>Usuario</td><td>Fecha</td><td>Puntaje</td></tr>";
 				try
 				{
-					rs=obj.Consulta(sql1);
+					rs=obj.Consulta(sql);
 					while(rs.next())
 					{
 						// ahi va los options segun las x que se repitan
 						
-						tabla+="<tr> <td>"+rs.getString(1)+"</td><td>"+rs.getString(2)+"</td></tr>";
+						tabla+="<tr> <td><a href>"+rs.getString(1)+"</a></td><td>"+rs.getString(3)+"</td><td>"+rs.getString(2)+"</td></tr>";
 					}
 					tabla +="</table>"; 
 				}
@@ -79,16 +49,76 @@ public class clsmetodos
 		
 		return tabla;
 		}
-	
-	public void ingresar(String titulo, String autor, String desc)
+         public String armar_tablafecha(String f)
 	{
-		String sql= "insert into libro values ('"+titulo+"','" +autor+ "','"+desc+"')";
-		System.out.println(sql);
-		ClsConexion con = new ClsConexion();
-		con.Ejecutar(sql);
+		String tabla="";
 		
-	}
-        
+		// consultar elementos
+               String sql="Select historico.id_historico,usuario.nombre_usuario, historico.valor, historico.fecha_test from historico,usuario where historico.fecha_test='"+f+"' and historico.id_usuario=usuario.id_usuario;" ;
+				//String sql1="select nombre_usuario,tipo from usuario;";
+                                ResultSet rs=null;
+				ClsConexion obj=new ClsConexion();
+		// Armar tabla
+		tabla="<table border=2 class='tbConsulta'>";
+		
+		// consulta
+		tabla+="<tr><td>Usuario</td><td>Fecha</td><td>Puntaje</td></tr>";
+				try
+				{
+					rs=obj.Consulta(sql);
+					while(rs.next())
+					{
+						// ahi va los options segun las x que se repitan
+						
+						tabla+="<tr> <td>"+rs.getString(2)+"</td><td>"+rs.getString(4)+"</td><td>"+rs.getString(3)+"</td><td><a  href='Reporte.jsp?user="+rs.getString(2)+"&id="+rs.getString(1)+"&fc="+rs.getString(4)+"'>Descargar</a></td></tr>";
+					}
+					tabla +="</table>"; 
+				}
+				catch(Exception e)
+				{
+					
+				}
+				// concatena al del inicio
+				System.out.println(tabla);
+		
+		return tabla;
+		}
+         
+        public String armar_tabla(String id,String f)
+	{
+		String tabla="";
+		
+		// consultar elementos
+               String sql="Select usuario.nombre_usuario, historico.valor, historico.fecha_test from historico,usuario where historico.id_usuario='"+id+"'and historico.fecha_test='"+f+"' and historico.id_usuario=usuario.id_usuario;" ;
+				//String sql1="select nombre_usuario,tipo from usuario;";
+                                ResultSet rs=null;
+				ClsConexion obj=new ClsConexion();
+		// Armar tabla
+		tabla="<table border=2 class='tbConsulta'>";
+		
+		// consulta
+		tabla+="<tr><td>Usuario</td><td>Fecha</td><td>Puntaje</td></tr>";
+				try
+				{
+					rs=obj.Consulta(sql);
+					while(rs.next())
+					{
+						// ahi va los options segun las x que se repitan
+						
+						tabla+="<tr> <td>"+rs.getString(1)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(2)+"</td></tr>";
+					}
+					tabla +="</table>"; 
+				}
+				catch(Exception e)
+				{
+					
+				}
+				// concatena al del inicio
+				System.out.println(tabla);
+		
+		return tabla;
+		}
+	      
         public boolean autentificacion(String usuario, String contraseña)
         {
                 String user;
@@ -254,12 +284,8 @@ public class clsmetodos
                 rs=obj.Consulta(con);
                 max=0;
                 while(rs.next())
-                {
-                                    
-                     
-                                    
-                                    
-                     et.setId(rs.getString("id_historico"));//id_historico
+                {             
+                    et.setId(rs.getString("id_historico"));//id_historico
                     et.setUsuario(rs.getString("id_usuario"));//id_usuario
                     et.setNombreUsuario(rs.getString("nombre_usuario"));//nombre_usuario
                     et.setPregunta(rs.getString("id_preguntas"));//preguntas formato id_pregunta:id_respuesta*id_pregunta:id_respuesta
@@ -275,5 +301,38 @@ public class clsmetodos
                     System.err.println("error"+e);
             }
             return et;
+        }
+             
+        
+             
+            public String historial(String id)
+            {
+                String tabla="";
+            	ResultSet rs=null;
+		ClsConexion obj=new ClsConexion();
+                EntidadTest et=new EntidadTest();
+                try {
+                String con="Select id_historico, historico.id_usuario,nombre_usuario,id_preguntas, valor,fecha_test from historico, usuario where usuario.id_usuario=historico.id_usuario and id_historico="+id;
+                rs=obj.Consulta(con);
+                
+                max=0;
+                while(rs.next())
+                {             
+                    et.setId(rs.getString("id_historico"));//id_historico
+                    et.setUsuario(rs.getString("id_usuario"));//id_usuario
+                    et.setNombreUsuario(rs.getString("nombre_usuario"));//nombre_usuario
+                    et.setPregunta(rs.getString("id_preguntas"));//preguntas formato id_pregunta:id_respuesta*id_pregunta:id_respuesta
+                    et.setValor(rs.getString("valor"));//valor del test
+                    et.setTexto(rs.getString("fecha_test"));//fecha_rest
+                   
+                   // if (max<Double.parseDouble(rs.getString(3)))max=Double.parseDouble(rs.getString(3));
+                   // out.println("id: "+rs.getString(1)+" respuesta: "+rs.getString(2)+" valor: "+rs.getString(3));
+                    
+                }   
+                //return list;
+            } catch (Exception e) {
+                    System.err.println("error"+e);
+            }
+            return tabla;
         }
 }

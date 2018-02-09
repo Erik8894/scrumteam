@@ -1,10 +1,8 @@
 <%-- 
-    Document   : ConsultaID
-    Created on : 27/12/2017, 20:15:13
+    Document   : Historial
+    Created on : 09/02/2018, 6:34:57
     Author     : USER
 --%>
-
-<!-- Los import -->
 <%@ page language="java" %>
 <%@ page import = "java.sql.Connection"%>
 <%@ page import = "java.sql.DriverManager"%> 
@@ -26,28 +24,26 @@
 <body>
     <div class="h1">
       
-            <h1>CONSULTA DE RESULTADOS</h1>
+            <h1>HISTORIAL DE TEST</h1>
        
     </div>
 <%
                 metodos.clsmetodos obj=new metodos.clsmetodos();
                 String tabla;
                 
-                out.print("<form action=ConsultaID.jsp method=post class=form1>");
-                out.print("<table align=center><tr><td class=t2>INGRESE EL ID:</td><td><input type=text class=Fields name=cedula></td><td><input type=submit name=buscar value=Consultar></td><tr><td><br></td></tr></tr></table>");
+                out.print("<form action=Historial.jsp method=post class=form1>");
+                out.print("<table align=center><tr><td class=t2>BUSQUEDA POR FECHA:</td><td><input type=text class=Fields name=fecha value=aaaa-mm-dd ></td><td><input type=submit name=buscar value=Consultar></td></tr></table>");
                 out.print("<br>");
                 out.print("<br>");
                 out.print("</form>");
-                String h,f;
-                h=request.getParameter("cedula");
+                String f;
                 f=request.getParameter("fecha");
-               
-                    tabla=obj.armar_tablaID(h);
-                    // tabla=obj.armar_tablafecha(f);<tr><td class=t2>FECHA:</td><td><input type=text class=Fields name=fecha></td></tr>
-                    //tabla=obj.armar_tabla(h,f);
-                        
+                
+               tabla=obj.armar_tablafecha(f);
+                              
                out.print(tabla);
 %>
+
 <br>
          <a href="menu.jsp" class="btn btn-default">Inicio</a>
 </body>
