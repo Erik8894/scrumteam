@@ -77,6 +77,9 @@
                     <div class="form-group">
 			    			<input type="submit" value="Registrar" class="btn btn-info btn-block" name="reg">
                     </div>
+                    <div class="form-group">
+			    			<input type="submit" value="Regresar al inicio" class="btn btn-info btn-block" name="in">
+                    </div>
 			    		
 			    		</form>
 			    	</div>
