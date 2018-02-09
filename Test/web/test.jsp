@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <script src="js/custom.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale1.0, minimun-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/estilos.css">
@@ -18,7 +18,7 @@
         <%@page session='true'%>
         
     </head>
-    <body background ="img/fondo_azul2.jpg" <%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
+    <body background ="img/fondo_azul2.jpg" onload="nobackbutton();" <%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
         
         <header>
         
