@@ -31,7 +31,7 @@
         </div>
         </header>
                 <br>
-                <form action="gracias.jsp" class="formulario" method="post">
+                <form action="resultado.jsp" class="formulario" method="post">
             <div class="radio-toolbar">
                  <%
                     session.setAttribute("data_Preguntas", "");

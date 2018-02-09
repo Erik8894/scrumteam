@@ -21,6 +21,9 @@ body{
     background-image: url(../img/botonsig2.png);
     background-repeat: no-repeat;
 }
+p{
+    filter:alpha(opacity=0);
+}
     
    
 
