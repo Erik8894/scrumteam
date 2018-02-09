@@ -22,8 +22,9 @@
         <div class="historial">
             <% 
                         Procesos p=new Procesos();
-                        out.print(p.histopreguntas(request.getParameter("id")));
-                        out.print(p.historespuestas(request.getParameter("id")));
+                        //out.print(p.histopreguntas(request.getParameter("id")));
+                        //out.print(p.historespuestas(request.getParameter("id")));
+                        out.print(p.procesos(request.getParameter("id")));
         //p.procesos(parametro);
             %>
             

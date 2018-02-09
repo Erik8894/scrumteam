@@ -122,7 +122,7 @@ public class Procesos {
                                + "en la fecha "+et.getTexto()
                                + "en las preguntas con sus respectivas respuestas <br>");*/
                       String elemento=et.getPregunta();
-                      System.out.println("elemento");
+                      //System.out.println("elemento");
                        String []pregRes=elemento.split(";");
                        for(int i=0;i<pregRes.length;i++)
                        {
