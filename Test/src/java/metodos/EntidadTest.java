@@ -18,7 +18,24 @@ public class EntidadTest {
     private double valorPregunta;
     private double ValorRespuesta;
     private double ValorMaxRespuesta;
+private String usuario;
+    private String nombreUsuario;
 
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
     public String getPregunta() {
         return pregunta;
     }

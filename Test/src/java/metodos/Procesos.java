@@ -5,6 +5,8 @@
  */
 package metodos;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
@@ -60,4 +62,56 @@ public class Procesos {
  
         return false;
     }
+                     public String obtenerHora(){
+        DateFormat df = new SimpleDateFormat("YYYY/MM/dd");
+            return df.format(new java.util.Date());
+    }
+           
+           
+           public String rellenarProcesos(){
+                ArrayList<EntidadTest> list=new ArrayList<EntidadTest>();
+        clsmetodos cls=new clsmetodos();
+        String envio="";
+        list=cls.envioProceso();
+        envio ="|   cedula  | nombre de usuario | valor | fecha test |<br>";
+        for (int i=0; i<list.size();i++){
+                            EntidadTest et= new EntidadTest();
+                            et=list.get(i);
+            envio=envio+"<a href=\"consultaUsuarios.jsp?histo="+et.getId()+"\"> | "+et.getUsuario()+"</a> | "+et.getNombreUsuario()+" | "+et.getValor()+" | "+et.getTexto()+" | <br>";
+        }
+               System.out.println(envio);
+           return envio;
+           }
+          
+           
+           
+           
+           
+           
+           public String procesos(String id){
+               String envio="";
+               
+                       clsmetodos cls=new clsmetodos();
+                       EntidadTest et=new EntidadTest();
+                       et=cls.histo(id);
+                       envio=envio+(et.getNombreUsuario()+"<br>"
+                               + "ha obtenido un puntaje de: "+et.getValor()+"<br>"
+                               + "en la fecha "+et.getTexto()
+                               + "en las preguntas con sus respectivas respuestas <br>");
+                      String elemento=et.getPregunta();
+                       String []pregRes=elemento.split(";");
+                       for(int i=0;i<pregRes.length;i++){
+                           String []resP=pregRes[i].split(":");
+                           
+                           
+                           
+                           
+                           envio=envio+("Pregunta "+i+": id_pregunta"+resP[0]+"<br>");
+                           envio=envio+("respuesta : id_respuesta"+resP[1]+"<br>");
+                       }
+                       
+                       
+                       return envio;
+           }
 }
+

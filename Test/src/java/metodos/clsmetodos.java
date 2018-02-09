@@ -199,4 +199,81 @@ public class clsmetodos
             }
             return list;
         }
+              public boolean ingresarTest(String id_usuario, String id_preguntas, double valor, String fecha_test)
+	{
+                String sql= "INSERT INTO public.historico(\n" +
+"	 id_usuario, id_preguntas, valor, fecha_test)\n" +
+"	VALUES ( '"+id_usuario+"','"+id_preguntas+"',"+valor +",'"+fecha_test+"')";
+                System.out.println(sql);
+		ClsConexion con = new ClsConexion();
+		//con.e1
+                if(con.Ejecutar(sql)!=null)
+                {
+                    return true;
+                }
+                return false;      
+        }
+             public ArrayList <EntidadTest> envioProceso(){
+            	ResultSet rs=null;
+                ArrayList list=new ArrayList();
+		ClsConexion obj=new ClsConexion();
+                try {
+                String con="Select id_historico, historico.id_usuario,nombre_usuario,id_preguntas, valor,fecha_test from historico, usuario where usuario.id_usuario=historico.id_usuario;";
+                rs=obj.Consulta(con);
+                max=0;
+                while(rs.next())
+                {
+                                    EntidadTest et=new EntidadTest();
+                     
+                                    
+                                    
+                    et.setId(rs.getString("id_historico"));//id_historico
+                    et.setUsuario(rs.getString("id_usuario"));//id_usuario
+                    et.setNombreUsuario(rs.getString("nombre_usuario"));//nombre_usuario
+                    et.setPregunta(rs.getString("id_preguntas"));//preguntas formato id_pregunta:id_respuesta*id_pregunta:id_respuesta
+                    et.setValor(rs.getString("valor"));//valor del test
+                    et.setTexto(rs.getString("fecha_test"));//fecha_rest
+                    
+                  //  if (max<Double.parseDouble(rs.getString(3)))max=Double.parseDouble(rs.getString(3));
+                   // out.println("id: "+rs.getString(1)+" respuesta: "+rs.getString(2)+" valor: "+rs.getString(3));
+                    list.add(et);
+                    
+                }   
+                //return list;
+            } catch (Exception e) {
+                    System.err.println("error"+e);
+            }
+            return list;
+        }
+             public EntidadTest histo(String id){
+            	ResultSet rs=null;
+		ClsConexion obj=new ClsConexion();
+                EntidadTest et=new EntidadTest();
+                try {
+                String con="Select id_historico, historico.id_usuario,nombre_usuario,id_preguntas, valor,fecha_test from historico, usuario where usuario.id_usuario=historico.id_usuario and id_historico="+id;
+                rs=obj.Consulta(con);
+                max=0;
+                while(rs.next())
+                {
+                                    
+                     
+                                    
+                                    
+                     et.setId(rs.getString("id_historico"));//id_historico
+                    et.setUsuario(rs.getString("id_usuario"));//id_usuario
+                    et.setNombreUsuario(rs.getString("nombre_usuario"));//nombre_usuario
+                    et.setPregunta(rs.getString("id_preguntas"));//preguntas formato id_pregunta:id_respuesta*id_pregunta:id_respuesta
+                    et.setValor(rs.getString("valor"));//valor del test
+                    et.setTexto(rs.getString("fecha_test"));//fecha_rest
+                   
+                   // if (max<Double.parseDouble(rs.getString(3)))max=Double.parseDouble(rs.getString(3));
+                   // out.println("id: "+rs.getString(1)+" respuesta: "+rs.getString(2)+" valor: "+rs.getString(3));
+                    
+                }   
+                //return list;
+            } catch (Exception e) {
+                    System.err.println("error"+e);
+            }
+            return et;
+        }
 }
