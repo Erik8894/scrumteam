@@ -18,7 +18,7 @@
         <%@page session='true'%>
         
     </head>
-    <body background ="img/fondo_azul2.jpg" onload="nobackbutton();" <%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
+    <body background ="img/fondo_azul2.jpg" onload="nobackbutton();"<%if (session.getAttribute("validacion").equals("1"));else out.println("hidden> <script type=\"text/javascript\">window.location=\"http://localhost:8084/Test/index.jsp\";</script");%>>
         
         <header>
         
@@ -31,7 +31,7 @@
         </div>
         </header>
                 <br>
-                <form action="resultado.jsp" class="formulario" method="post">
+                <form action="gracias.jsp" class="formulario" method="post">
             <div class="radio-toolbar">
                  <%
                     session.setAttribute("data_Preguntas", "");
