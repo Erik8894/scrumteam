@@ -100,14 +100,57 @@ public class Procesos {
                                + "en las preguntas con sus respectivas respuestas <br>");
                       String elemento=et.getPregunta();
                        String []pregRes=elemento.split(";");
-                       for(int i=0;i<pregRes.length;i++){
+                       for(int i=0;i<pregRes.length;i++)
+                       {
                            String []resP=pregRes[i].split(":");
-                           
-                           
-                           
-                           
                            envio=envio+("Pregunta "+i+": id_pregunta"+resP[0]+"<br>");
                            envio=envio+("respuesta : id_respuesta"+resP[1]+"<br>");
+                       }
+                       
+                       
+                       return envio;
+           }
+           
+            public String histopreguntas(String id){
+               String envio="";
+               
+                       clsmetodos cls=new clsmetodos();
+                       EntidadTest et=new EntidadTest();
+                       et=cls.histo(id);
+                      /* envio=envio+(et.getNombreUsuario()+"<br>"
+                               + "ha obtenido un puntaje de: "+et.getValor()+"<br>"
+                               + "en la fecha "+et.getTexto()
+                               + "en las preguntas con sus respectivas respuestas <br>");*/
+                      String elemento=et.getPregunta();
+                      System.out.println("elemento");
+                       String []pregRes=elemento.split(";");
+                       for(int i=0;i<pregRes.length;i++)
+                       {
+                           String []resP=pregRes[i].split(":");
+                           envio=resP[0];
+                       }
+                       
+                       
+                       return envio;
+           }
+            public String historespuestas(String id){
+               String envio="";
+               
+                       clsmetodos cls=new clsmetodos();
+                       EntidadTest et=new EntidadTest();
+                       et=cls.histo(id);
+                   /*    envio=envio+(et.getNombreUsuario()+"<br>"
+                               + "ha obtenido un puntaje de: "+et.getValor()+"<br>"
+                               + "en la fecha "+et.getTexto()
+                               + "en las preguntas con sus respectivas respuestas <br>");*/
+                      String elemento=et.getPregunta();
+                      System.out.println("elemento");
+                       String []pregRes=elemento.split(";");
+                       for(int i=0;i<pregRes.length;i++)
+                       {
+                           String []resP=pregRes[i].split(":");
+                           
+                           envio=resP[1];
                        }
                        
                        

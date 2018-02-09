@@ -19,11 +19,15 @@
     </head>
     <body>
         <h1>Preguntas y Respuestas TEST Aspirante <% String a; a=request.getParameter("user");%><%=a%></h1>
-        
-        <% 
+        <div class="historial">
+            <% 
                         Procesos p=new Procesos();
-                        out.print(p.procesos(request.getParameter("id")));
+                        out.print(p.histopreguntas(request.getParameter("id")));
+                        out.print(p.historespuestas(request.getParameter("id")));
         //p.procesos(parametro);
-        %>
+            %>
+            
+        </div> 
+        
     </body>
 </html>
